@@ -84,15 +84,16 @@ class CartPoleTrueSwingUp(gym.Env):
 
         # ---------------- REWARD ----------------
 
-        upright = np.exp(-4 * theta**2)
+        upright = np.exp(-5 * theta**2)
 
         reward = (
-         1.5 * np.cos(theta)           # swing objective
-         + 4.0 * upright               # strong upright bonus
-         - 0.2 * upright * x**2        # center cart ONLY near upright
+         2.0 * np.cos(theta)                 # swing objective
+         + 6.0 * upright                     # strong upright reward
+         - 0.5 * upright * theta_dot**2      # STRONG damping near upright
+         - 0.05 * upright * x**2
          - 0.02 * upright * x_dot**2
-         - 0.01 * theta_dot**2
         )
+
 
 
         # ---------------------------------------

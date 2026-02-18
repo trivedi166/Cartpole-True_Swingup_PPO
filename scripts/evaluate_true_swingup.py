@@ -12,7 +12,7 @@ from env.cartpole_true_swingup import CartPoleTrueSwingUp
 env = CartPoleTrueSwingUp()
 
 # Load trained model
-model = PPO.load("ppo_true_swingup")   # adjust path if needed
+model = PPO.load("models/ppo_true_swingup")   # adjust path if needed
 
 num_episodes = 10
 success_count = 0

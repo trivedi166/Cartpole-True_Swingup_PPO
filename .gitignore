@@ -6,7 +6,6 @@ __pycache__/
 *.egg-info/
 .env/
 rl_env/
-models/
 *.log
 *.h5
 
